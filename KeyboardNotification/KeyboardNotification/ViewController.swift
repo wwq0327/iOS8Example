@@ -29,13 +29,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
         notificationCenter.addObserver(self, selector: "handleKeyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         
         // 键盘出现后
-//        notificationCenter.addObserver(self, selector: "handleKeyboardDidShow", name: UIKeyboardDidShowNotification, object: nil)
+        notificationCenter.addObserver(self, selector: "handleKeyboardDidShow:", name: UIKeyboardDidShowNotification, object: nil)
         
         // 键盘消失时
         notificationCenter.addObserver(self, selector: "handleKeyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
         
         // 键盘消失后
-//        notificationCenter.addObserver(self, selector: "handleKeyboardDidHide", name: UIKeyboardDidHideNotification, object: nil)
+        notificationCenter.addObserver(self, selector: "handleKeyboardDidHide:", name: UIKeyboardDidHideNotification, object: nil)
     }
     
     func handleKeyboardWillShow(notification: NSNotification) {
@@ -43,17 +43,17 @@ class ViewController: UIViewController, UITextFieldDelegate {
         NSLog("键盘显示时")
     }
     
-//    func handleKeyboardDidShow(notification: NSNotification) {
-//        NSLog("键盘显示后")
-//    }
+    func handleKeyboardDidShow(notification: NSNotification) {
+        NSLog("键盘显示后")
+    }
     
     func handleKeyboardWillHide(notification: NSNotification) {
         NSLog("键盘消失时")
     }
     
-//    func handleKeyboardDidHide(notification: NSNotification) {
-//        NSLog("键盘消失时")
-//    }
+    func handleKeyboardDidHide(notification: NSNotification) {
+        NSLog("键盘消失后")
+    }
     
     // 视图消失前
     override func viewWillDisappear(animated: Bool) {
