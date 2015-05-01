@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="ViewControllerLifecycle" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6i5-nL-g9L">
+                                <rect key="frame" x="284" y="279" width="32" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Go">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="jie-cy-qpi" kind="modal" identifier="Show Second" id="5YZ-aJ-ejD"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.16862745583057404" green="0.9647059440612793" blue="0.83137261867523193" alpha="1" colorSpace="deviceRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="6i5-nL-g9L" secondAttribute="centerY" id="LtK-BD-J9X"/>
+                            <constraint firstAttribute="centerX" secondItem="6i5-nL-g9L" secondAttribute="centerX" id="POO-E0-1u8"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-214" y="341"/>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="OL7-jj-Fme">
+            <objects>
+                <viewController id="jie-cy-qpi" customClass="SecondViewController" customModule="ViewControllerLifecycle" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UaD-y7-Odt"/>
+                        <viewControllerLayoutGuide type="bottom" id="Pd5-jX-XP8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UEH-Ef-jDu">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vS5-S4-YMV">
+                                <rect key="frame" x="258" y="285" width="85" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="85" id="Ngg-cN-g5M"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Home">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickBtn:" destination="jie-cy-qpi" eventType="touchUpInside" id="FZx-aP-IxC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vS5-S4-YMV" firstAttribute="top" secondItem="UaD-y7-Odt" secondAttribute="bottom" constant="265" id="LQI-m5-h8x"/>
+                            <constraint firstItem="vS5-S4-YMV" firstAttribute="centerX" secondItem="UEH-Ef-jDu" secondAttribute="centerX" id="Xf3-Nm-KHc"/>
+                            <constraint firstItem="vS5-S4-YMV" firstAttribute="centerY" secondItem="UEH-Ef-jDu" secondAttribute="centerY" id="rPS-iL-Q7h"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ory-jp-dtB"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gkZ-r9-Tg0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="562" y="341"/>
+        </scene>
+    </scenes>
+</document>
