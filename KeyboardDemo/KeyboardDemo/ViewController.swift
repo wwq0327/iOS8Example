@@ -15,11 +15,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     
     
+    // 加载视图
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+    // 视图呈现后调用
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -32,7 +34,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         center.addObserver(self, selector: "handleKeyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
     }
     
-    // 当App不在屏幕上显示时
+    // 视图消失时调用
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         
@@ -49,16 +51,17 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func handleKeyboardWillShow(notification: NSNotification) {
         let userInfo = notification.userInfo
         
-        
         if let info = userInfo {
-            let aninationDurationObject = info[UIKeyboardAnimationDurationUserInfoKey] as! NSValue
+            // 动画持续时间
+            let animationDurationObject = info[UIKeyboardAnimationDurationUserInfoKey] as! NSValue
             
+            // 键盘尺寸
             let keyboardEndRectObject = info[UIKeyboardFrameEndUserInfoKey] as! NSValue
             
             var animationDuration = 0.0
             var keyboardEndRect = CGRectZero
             
-            aninationDurationObject.getValue(&animationDuration)
+            animationDurationObject.getValue(&animationDuration)
             keyboardEndRectObject.getValue(&keyboardEndRect)
             
             let window = UIApplication.sharedApplication().keyWindow
