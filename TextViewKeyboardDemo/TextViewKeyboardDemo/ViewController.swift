@@ -15,7 +15,8 @@ class ViewController: UIViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        textView.becomeFirstResponder()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -92,6 +93,11 @@ class ViewController: UIViewController, UITextViewDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    func textViewShouldBeginEditing(textView: UITextView) -> Bool {
+        textView.resignFirstResponder()
+        
+        return true
+    }
 }
 

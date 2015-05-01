@@ -26,13 +26,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let notificationCenter = NSNotificationCenter.defaultCenter()
         
         // 键盘出现时
-        notificationCenter.addObserver(self, selector: "handleKeyboardWillShow", name: UIKeyboardWillShowNotification, object: nil)
+        notificationCenter.addObserver(self, selector: "handleKeyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         
         // 键盘出现后
 //        notificationCenter.addObserver(self, selector: "handleKeyboardDidShow", name: UIKeyboardDidShowNotification, object: nil)
         
         // 键盘消失时
-//        notificationCenter.addObserver(self, selector: "handleKeyboardWillHide", name: UIKeyboardWillHideNotification, object: nil)
+        notificationCenter.addObserver(self, selector: "handleKeyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
         
         // 键盘消失后
 //        notificationCenter.addObserver(self, selector: "handleKeyboardDidHide", name: UIKeyboardDidHideNotification, object: nil)
@@ -40,9 +40,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     func handleKeyboardWillShow(notification: NSNotification) {
         
-        let userInfo = notification.userInfo
-        
-//        NSLog("键盘显示时")
+        NSLog("键盘显示时")
     }
     
 //    func handleKeyboardDidShow(notification: NSNotification) {
