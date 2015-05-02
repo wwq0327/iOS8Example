@@ -20,7 +20,11 @@ class ViewController: UIViewController, UITextViewDelegate {
     }
     
     override func viewDidAppear(animated: Bool) {
+        
         super.viewDidAppear(animated)
+        
+        // 获到textView的原始大小
+        originalTextViewFrame = textView.frame
         
         // 注册消息
         let defaultCenter = NSNotificationCenter.defaultCenter()
@@ -46,47 +50,34 @@ class ViewController: UIViewController, UITextViewDelegate {
         moveTextviewForKeyboard(notification, up: false)
     }
     
-    
     func moveTextviewForKeyboard(notification: NSNotification, up: Bool) {
         
         let userInfo = notification.userInfo
         
         if let info = userInfo {
-            // 动画持续时间
-            let animationDurationObject = info[UIKeyboardAnimationDurationUserInfoKey] as! NSValue
             
-            // 键盘尺寸
-            let keyboardEndRectObject = info[UIKeyboardFrameEndUserInfoKey] as! NSValue
-            
-            var animationDuration = 0.0
-            var keyboardEndRect = CGRectZero
-            
-            // 取出键值，分别给animationDuration,keyboardEndRect
-            animationDurationObject.getValue(&animationDuration)
-            keyboardEndRectObject.getValue(&keyboardEndRect)
+            var animationDuration = (info[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
+            var keyboardEndRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
             
             let window = UIApplication.sharedApplication().keyWindow
             keyboardEndRect = view.convertRect(keyboardEndRect, fromView: window)
 
             if up {
-                UIView.animateWithDuration(animationDuration, animations: { [weak self] in
+                UIView.animateWithDuration(animationDuration, animations: {
+                    
                     var keyboardTop = keyboardEndRect.origin.y
-                    var newTextViewFrame = self?.textView.frame
-                    self!.originalTextViewFrame = self!.textView.frame
-                    newTextViewFrame?.size.height = keyboardTop - self!.textView.frame.origin.y - 20.0
-                    self!.textView.frame = newTextViewFrame!
+                    var newTextViewFrame = self.textView.frame
+                    newTextViewFrame.size.height = keyboardTop - self.textView.frame.origin.y - 20.0
+                    self.textView.frame = newTextViewFrame
                     })
             } else {
                 UIView.animateWithDuration(animationDuration, animations: {
-                    [weak self] in
-                    self!.textView.frame = self!.originalTextViewFrame!
+                    self.textView.frame = self.originalTextViewFrame
                     })
             }
             
             UIView.commitAnimations()
         }
-        
-        
     }
 
     override func didReceiveMemoryWarning() {
