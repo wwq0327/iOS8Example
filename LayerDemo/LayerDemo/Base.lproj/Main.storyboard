@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="LayerDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="222222" translatesAutoresizingMaskIntoConstraints="NO" id="Sg4-Cv-pPq">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="208"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="208" id="jNE-gh-dcN"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="2fU-qY-pGr">
+                                <rect key="frame" x="220" y="125" width="160" height="160"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="eNT-6Z-VfO"/>
+                                    <constraint firstAttribute="height" constant="160" id="rLd-so-1fa"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wyatt Wang" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9az-wh-MUa">
+                                <rect key="frame" x="196" y="325" width="209" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="209" id="FOY-WU-vxQ"/>
+                                    <constraint firstAttribute="height" constant="43" id="R1C-aj-HsG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9az-wh-MUa" firstAttribute="top" secondItem="2fU-qY-pGr" secondAttribute="bottom" constant="40" id="GV3-f6-NHH"/>
+                            <constraint firstAttribute="centerX" secondItem="9az-wh-MUa" secondAttribute="centerX" id="HI3-W4-T4t"/>
+                            <constraint firstItem="Sg4-Cv-pPq" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="X6W-bX-OTo"/>
+                            <constraint firstItem="Sg4-Cv-pPq" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="ZfF-HY-AKV"/>
+                            <constraint firstAttribute="centerY" secondItem="2fU-qY-pGr" secondAttribute="centerY" constant="95" id="ebQ-bF-i5S"/>
+                            <constraint firstAttribute="centerX" secondItem="2fU-qY-pGr" secondAttribute="centerX" id="kWI-2G-8x7"/>
+                            <constraint firstAttribute="trailing" secondItem="Sg4-Cv-pPq" secondAttribute="trailing" id="oTp-AO-iPb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="profileImageview" destination="2fU-qY-pGr" id="5jd-6m-tUc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="2" width="199" height="199"/>
+        <image name="222222" width="1366" height="768"/>
+    </resources>
+</document>
