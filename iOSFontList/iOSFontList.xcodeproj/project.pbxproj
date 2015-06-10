@@ -1,0 +1,436 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AD1383E11B27CE6000599152 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1383E01B27CE6000599152 /* AppDelegate.swift */; };
+		AD1383E61B27CE6000599152 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD1383E41B27CE6000599152 /* Main.storyboard */; };
+		AD1383E81B27CE6000599152 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD1383E71B27CE6000599152 /* Images.xcassets */; };
+		AD1383EB1B27CE6000599152 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD1383E91B27CE6000599152 /* LaunchScreen.xib */; };
+		AD1383F71B27CE6100599152 /* iOSFontListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1383F61B27CE6100599152 /* iOSFontListTests.swift */; };
+		AD1384011B27CEE100599152 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1384001B27CEE100599152 /* MasterViewController.swift */; };
+		AD1384031B27CF5800599152 /* MasterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1384021B27CF5800599152 /* MasterViewModel.swift */; };
+		AD1384051B27D03F00599152 /* FontSorter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1384041B27D03F00599152 /* FontSorter.swift */; };
+		AD1384071B28217700599152 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1384061B28217700599152 /* DetailViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AD1383F11B27CE6100599152 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AD1383D31B27CE6000599152 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD1383DA1B27CE6000599152;
+			remoteInfo = iOSFontList;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AD1383DB1B27CE6000599152 /* iOSFontList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSFontList.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD1383DF1B27CE6000599152 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD1383E01B27CE6000599152 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AD1383E51B27CE6000599152 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AD1383E71B27CE6000599152 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		AD1383EA1B27CE6000599152 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		AD1383F01B27CE6100599152 /* iOSFontListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSFontListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD1383F51B27CE6100599152 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD1383F61B27CE6100599152 /* iOSFontListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSFontListTests.swift; sourceTree = "<group>"; };
+		AD1384001B27CEE100599152 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		AD1384021B27CF5800599152 /* MasterViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewModel.swift; sourceTree = "<group>"; };
+		AD1384041B27D03F00599152 /* FontSorter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontSorter.swift; sourceTree = "<group>"; };
+		AD1384061B28217700599152 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AD1383D81B27CE6000599152 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD1383ED1B27CE6100599152 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AD1383D21B27CE6000599152 = {
+			isa = PBXGroup;
+			children = (
+				AD1383DD1B27CE6000599152 /* iOSFontList */,
+				AD1383F31B27CE6100599152 /* iOSFontListTests */,
+				AD1383DC1B27CE6000599152 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AD1383DC1B27CE6000599152 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AD1383DB1B27CE6000599152 /* iOSFontList.app */,
+				AD1383F01B27CE6100599152 /* iOSFontListTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AD1383DD1B27CE6000599152 /* iOSFontList */ = {
+			isa = PBXGroup;
+			children = (
+				AD1383E41B27CE6000599152 /* Main.storyboard */,
+				AD1383DE1B27CE6000599152 /* Supporting Files */,
+				AD1384001B27CEE100599152 /* MasterViewController.swift */,
+				AD1384021B27CF5800599152 /* MasterViewModel.swift */,
+				AD1384041B27D03F00599152 /* FontSorter.swift */,
+				AD1384061B28217700599152 /* DetailViewController.swift */,
+			);
+			path = iOSFontList;
+			sourceTree = "<group>";
+		};
+		AD1383DE1B27CE6000599152 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AD1383E01B27CE6000599152 /* AppDelegate.swift */,
+				AD1383E91B27CE6000599152 /* LaunchScreen.xib */,
+				AD1383E71B27CE6000599152 /* Images.xcassets */,
+				AD1383DF1B27CE6000599152 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AD1383F31B27CE6100599152 /* iOSFontListTests */ = {
+			isa = PBXGroup;
+			children = (
+				AD1383F61B27CE6100599152 /* iOSFontListTests.swift */,
+				AD1383F41B27CE6100599152 /* Supporting Files */,
+			);
+			path = iOSFontListTests;
+			sourceTree = "<group>";
+		};
+		AD1383F41B27CE6100599152 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AD1383F51B27CE6100599152 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AD1383DA1B27CE6000599152 /* iOSFontList */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD1383FA1B27CE6100599152 /* Build configuration list for PBXNativeTarget "iOSFontList" */;
+			buildPhases = (
+				AD1383D71B27CE6000599152 /* Sources */,
+				AD1383D81B27CE6000599152 /* Frameworks */,
+				AD1383D91B27CE6000599152 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iOSFontList;
+			productName = iOSFontList;
+			productReference = AD1383DB1B27CE6000599152 /* iOSFontList.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AD1383EF1B27CE6100599152 /* iOSFontListTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD1383FD1B27CE6100599152 /* Build configuration list for PBXNativeTarget "iOSFontListTests" */;
+			buildPhases = (
+				AD1383EC1B27CE6100599152 /* Sources */,
+				AD1383ED1B27CE6100599152 /* Frameworks */,
+				AD1383EE1B27CE6100599152 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AD1383F21B27CE6100599152 /* PBXTargetDependency */,
+			);
+			name = iOSFontListTests;
+			productName = iOSFontListTests;
+			productReference = AD1383F01B27CE6100599152 /* iOSFontListTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AD1383D31B27CE6000599152 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Wanqing Wang";
+				TargetAttributes = {
+					AD1383DA1B27CE6000599152 = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+					AD1383EF1B27CE6100599152 = {
+						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = AD1383DA1B27CE6000599152;
+					};
+				};
+			};
+			buildConfigurationList = AD1383D61B27CE6000599152 /* Build configuration list for PBXProject "iOSFontList" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AD1383D21B27CE6000599152;
+			productRefGroup = AD1383DC1B27CE6000599152 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AD1383DA1B27CE6000599152 /* iOSFontList */,
+				AD1383EF1B27CE6100599152 /* iOSFontListTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AD1383D91B27CE6000599152 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD1383E61B27CE6000599152 /* Main.storyboard in Resources */,
+				AD1383EB1B27CE6000599152 /* LaunchScreen.xib in Resources */,
+				AD1383E81B27CE6000599152 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD1383EE1B27CE6100599152 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AD1383D71B27CE6000599152 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD1384011B27CEE100599152 /* MasterViewController.swift in Sources */,
+				AD1384051B27D03F00599152 /* FontSorter.swift in Sources */,
+				AD1384071B28217700599152 /* DetailViewController.swift in Sources */,
+				AD1384031B27CF5800599152 /* MasterViewModel.swift in Sources */,
+				AD1383E11B27CE6000599152 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD1383EC1B27CE6100599152 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD1383F71B27CE6100599152 /* iOSFontListTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AD1383F21B27CE6100599152 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD1383DA1B27CE6000599152 /* iOSFontList */;
+			targetProxy = AD1383F11B27CE6100599152 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AD1383E41B27CE6000599152 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AD1383E51B27CE6000599152 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AD1383E91B27CE6000599152 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AD1383EA1B27CE6000599152 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AD1383F81B27CE6100599152 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AD1383F91B27CE6100599152 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AD1383FB1B27CE6100599152 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = iOSFontList/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		AD1383FC1B27CE6100599152 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = iOSFontList/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		AD1383FE1B27CE6100599152 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = iOSFontListTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOSFontList.app/iOSFontList";
+			};
+			name = Debug;
+		};
+		AD1383FF1B27CE6100599152 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = iOSFontListTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOSFontList.app/iOSFontList";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AD1383D61B27CE6000599152 /* Build configuration list for PBXProject "iOSFontList" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD1383F81B27CE6100599152 /* Debug */,
+				AD1383F91B27CE6100599152 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD1383FA1B27CE6100599152 /* Build configuration list for PBXNativeTarget "iOSFontList" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD1383FB1B27CE6100599152 /* Debug */,
+				AD1383FC1B27CE6100599152 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		AD1383FD1B27CE6100599152 /* Build configuration list for PBXNativeTarget "iOSFontListTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD1383FE1B27CE6100599152 /* Debug */,
+				AD1383FF1B27CE6100599152 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AD1383D31B27CE6000599152 /* Project object */;
+}
