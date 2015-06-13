@@ -17,10 +17,6 @@ class MasterViewController: UITableViewController {
     struct TableCellIndentifier {
         static let fontCellIndentifier = "NameCell"
     }
-//    
-//    required init(coder aDecoder: NSCoder) {
-//        super.init(coder: aDecoder)
-//    }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return viewModel.numberOfSections()
