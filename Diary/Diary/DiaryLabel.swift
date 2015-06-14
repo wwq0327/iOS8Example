@@ -12,11 +12,12 @@ class DiaryLabel: UILabel {
     var textAttributes: [NSObject : AnyObject]!
     
     convenience init(fontname:String ,labelText:String, fontSize : CGFloat, lineHeight: CGFloat){
-        
+        // 调用UIView的构造器
         self.init(frame: CGRectZero)
         
         let font = UIFont(name: fontname, size: fontSize) as UIFont!
         
+        // 设置段落样式，行高
         var paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = lineHeight
         
@@ -43,7 +44,9 @@ class DiaryLabel: UILabel {
         self.frame = CGRectMake(0, 0, labelSize.width, labelSize.height)
         
         self.attributedText = NSAttributedString(string: labelText, attributes: textAttributes)
+        // 换行
         self.lineBreakMode = NSLineBreakMode.ByCharWrapping
+        // label多行显示
         self.numberOfLines = 0
     }
     
@@ -61,7 +64,9 @@ class DiaryLabel: UILabel {
     
 }
 
+// 计算竖式文字的大小
 func sizeHeightWithText(labelText: NSString, fontSize: CGFloat, textAttributes: [NSObject : AnyObject]) -> CGRect {
-    
+    // 一个文字的宽度， 480高度的文本框
+    // textAttributes 存放字体及行高宽之类的信息
     return labelText.boundingRectWithSize(CGSizeMake(fontSize, 480), options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: textAttributes, context: nil)
 }
