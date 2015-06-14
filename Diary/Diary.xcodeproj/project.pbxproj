@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AD3F17341B2DAEBA000D0902 /* Diary.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3F17331B2DAEBA000D0902 /* Diary.swift */; };
+		AD3F17361B2DC6B6000D0902 /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3F17351B2DC6B6000D0902 /* DiaryViewController.swift */; };
 		AD8803B81B2D163F00CD53EA /* DiaryYearCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8803B71B2D163F00CD53EA /* DiaryYearCollectionViewController.swift */; };
 		AD8803BA1B2D18F000CD53EA /* DiaryHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8803B91B2D18F000CD53EA /* DiaryHelper.swift */; };
 		AD8803BC1B2D20EE00CD53EA /* DiaryAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8803BB1B2D20EE00CD53EA /* DiaryAnimator.swift */; };
@@ -42,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		AD3F17331B2DAEBA000D0902 /* Diary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Diary.swift; sourceTree = "<group>"; };
+		AD3F17351B2DC6B6000D0902 /* DiaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryViewController.swift; sourceTree = "<group>"; };
 		AD8803B71B2D163F00CD53EA /* DiaryYearCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryYearCollectionViewController.swift; sourceTree = "<group>"; };
 		AD8803B91B2D18F000CD53EA /* DiaryHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryHelper.swift; sourceTree = "<group>"; };
 		AD8803BB1B2D20EE00CD53EA /* DiaryAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryAnimator.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				AD8803B71B2D163F00CD53EA /* DiaryYearCollectionViewController.swift */,
 				AD8803C01B2D5D2100CD53EA /* DiaryMonthDayCollectionViewController.swift */,
 				AD8803C31B2D6EDF00CD53EA /* DiaryComposeViewController.swift */,
+				AD3F17351B2DC6B6000D0902 /* DiaryViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				ADF9CEEC1B2C81FA0090A172 /* AppDelegate.swift in Sources */,
 				ADF9CEEF1B2C81FA0090A172 /* Diary.xcdatamodeld in Sources */,
 				AD3F17341B2DAEBA000D0902 /* Diary.swift in Sources */,
+				AD3F17361B2DC6B6000D0902 /* DiaryViewController.swift in Sources */,
 				AD8803C41B2D6EDF00CD53EA /* DiaryComposeViewController.swift in Sources */,
 				AD8803BA1B2D18F000CD53EA /* DiaryHelper.swift in Sources */,
 				AD8803B81B2D163F00CD53EA /* DiaryYearCollectionViewController.swift in Sources */,

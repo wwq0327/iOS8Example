@@ -25,7 +25,9 @@ struct StoryboardIdentifiers {
     static let diaryYearIdentifiers = "DiaryYearCollectionViewController"
     static let diaryMonthIdentifiers = "DiaryMonthDayCollectionViewController"
     static let diaryComposeViewController = "DiaryComposeViewController"
+    static let diaryViewController = "DiaryViewController"
 }
+
 // colletioncell indetifiers
 struct CollectionCellIdetifiers {
     // home视图中的cell

@@ -36,7 +36,7 @@ class DiaryMonthDayCollectionViewController: UICollectionViewController {
         
         composeButton.center = CGPointMake(screenRect.width - yearLabel.frame.size.width/2.0 - 15, 38 + yearLabel.frame.size.height + 26.0/2.0)
         
-        composeButton.addTarget(self, action: "newCompose:", forControlEvents: UIControlEvents.TouchUpInside)
+        composeButton.addTarget(self, action: "newCompose", forControlEvents: UIControlEvents.TouchUpInside)
         
         
         self.view.addSubview(composeButton)
@@ -83,7 +83,7 @@ class DiaryMonthDayCollectionViewController: UICollectionViewController {
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(CollectionCellIdetifiers.diaryCellIdentifiers, forIndexPath: indexPath) as! DiaryCollectionViewCell
-        cell.labelText = "一十三日"
+        cell.labelText = "一十四日"
         cell.textInt = 6
         return cell
     }

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import CoreData
 
 
 class DiaryYearCollectionViewController: UICollectionViewController {
@@ -15,9 +15,15 @@ class DiaryYearCollectionViewController: UICollectionViewController {
     var year: Int!
     var yearLabel: UILabel!
     var composeButton: UIButton!
+    
+    // data
+    var diarys = [NSManagedObject]()
+    var fetchedResultsController: NSFetchedResultsController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        loadData()
         
         yearLabel = DiaryLabel(fontname: "TpldKhangXiDictTrial", labelText: "\(numberToChinese(year))年", fontSize: 20.0, lineHeight: 5.0)
         yearLabel.center = CGPointMake(screenRect.width-yearLabel.frame.size.width/2.0-15, 20+yearLabel.frame.size.height/2.0)
@@ -44,11 +50,24 @@ class DiaryYearCollectionViewController: UICollectionViewController {
         self.view.backgroundColor = UIColor.whiteColor()
         
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func loadData() {
+        let fetchRequest = NSFetchRequest(entityName: "Diary")
+        var error: NSError?
+        var year = 2015
+        var month = 6
+        
+        let fetchedResults = managedContext.executeFetchRequest(fetchRequest, error: &error) as! [NSManagedObject]?
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "created_at", ascending: true)] // 排序方式
+        fetchRequest.predicate = NSPredicate(format: "year = \(year) AND month = \(month)")
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: managedContext, sectionNameKeyPath: "month", cacheName: nil)
+        if !fetchedResultsController.performFetch(&error) {
+            println("Present empty year")
+        } else {
+            diarys = fetchedResults!
+        }
     }
+
     
     func newCompose() {
         let composeViewController = self.storyboard?.instantiateViewControllerWithIdentifier(StoryboardIdentifiers.diaryComposeViewController) as! DiaryComposeViewController
@@ -71,8 +90,13 @@ class DiaryYearCollectionViewController: UICollectionViewController {
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(CollectionCellIdetifiers.diaryCellIdentifiers, forIndexPath: indexPath) as! DiaryCollectionViewCell
-        cell.labelText = "六月"
-        cell.textInt = 6
+        if fetchedResultsController.sections?.count == 0 {
+            cell.labelText = "\(numberToChineseWithUnit(NSCalendar.currentCalendar().component(NSCalendarUnit.CalendarUnitMonth, fromDate: NSDate()))) 月"
+        } else {
+            let sectionInfo = fetchedResultsController.sections![indexPath.row] as! NSFetchedResultsSectionInfo
+            var month = sectionInfo.name?.toInt()
+            cell.labelText = "\(numberToChineseWithUnit(month!)) 月"
+        }
         
         return cell
     }
@@ -81,8 +105,17 @@ class DiaryYearCollectionViewController: UICollectionViewController {
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(CollectionCellIdetifiers.diaryCellIdentifiers, forIndexPath: indexPath) as! DiaryCollectionViewCell
         var dvc = self.storyboard?.instantiateViewControllerWithIdentifier(StoryboardIdentifiers.diaryMonthIdentifiers) as! DiaryMonthDayCollectionViewController
-        dvc.year = 2015
-        dvc.month = 6
+        
+        if fetchedResultsController.sections?.count == 0 {
+            dvc.month = NSCalendar.currentCalendar().component(NSCalendarUnit.CalendarUnitMonth, fromDate: NSDate())
+        }else{
+            let sectionInfo = fetchedResultsController.sections![indexPath.row] as! NSFetchedResultsSectionInfo
+            var month = sectionInfo.name?.toInt()
+            dvc.month = month!
+        }
+        
+        dvc.year = year
+        
         self.navigationController?.pushViewController(dvc, animated: true)
     }
     
