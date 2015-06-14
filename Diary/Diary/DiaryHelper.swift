@@ -8,13 +8,23 @@
 
 import UIKit
 
+let defaultFont = "Wyue-GutiFangsong-NC"
+
 let screenRect = UIScreen.mainScreen().bounds
 let DiaryRed = UIColor(red: 192.0/255.0, green: 23.0/255.0, blue: 48.0/255.0, alpha: 1.0)
+let DiaryFont = UIFont(name: defaultFont, size: 18) as UIFont!
+let DiaryLocationFont = UIFont(name: defaultFont, size: 16) as UIFont!
+let DiaryTitleFont = UIFont(name: defaultFont, size: 18) as UIFont!
+
+// CoreData
+let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+let managedContext = appDelegate.managedObjectContext!
 
 // storyboard identifiers
 struct StoryboardIdentifiers {
     static let diaryYearIdentifiers = "DiaryYearCollectionViewController"
     static let diaryMonthIdentifiers = "DiaryMonthDayCollectionViewController"
+    static let diaryComposeViewController = "DiaryComposeViewController"
 }
 // colletioncell indetifiers
 struct CollectionCellIdetifiers {
@@ -100,3 +110,6 @@ func singleNumberToChinese(number: Character) -> String {
         return ""
     }
 }
+
+
+

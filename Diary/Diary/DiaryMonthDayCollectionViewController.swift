@@ -36,7 +36,7 @@ class DiaryMonthDayCollectionViewController: UICollectionViewController {
         
         composeButton.center = CGPointMake(screenRect.width - yearLabel.frame.size.width/2.0 - 15, 38 + yearLabel.frame.size.height + 26.0/2.0)
         
-        composeButton.addTarget(self, action: "newCompose", forControlEvents: UIControlEvents.TouchUpInside)
+        composeButton.addTarget(self, action: "newCompose:", forControlEvents: UIControlEvents.TouchUpInside)
         
         
         self.view.addSubview(composeButton)
@@ -49,7 +49,7 @@ class DiaryMonthDayCollectionViewController: UICollectionViewController {
         monthLabel.updateLabelColor(DiaryRed)
         monthLabel.userInteractionEnabled = true
         
-        var mmTapUpRecognizer = UITapGestureRecognizer(target: self, action: "backToYear")
+        var mmTapUpRecognizer = UITapGestureRecognizer(target: self, action: "backToYear:")
         mmTapUpRecognizer.numberOfTapsRequired = 1
         monthLabel.addGestureRecognizer(mmTapUpRecognizer)
         
@@ -66,6 +66,11 @@ class DiaryMonthDayCollectionViewController: UICollectionViewController {
         self.collectionView!.center = CGPoint(x: self.view.frame.size.width/2.0, y: self.view.frame.size.height/2.0)
         
         self.view.backgroundColor = UIColor.whiteColor()
+    }
+    
+    func newCompose() {
+        let composeViewController = self.storyboard?.instantiateViewControllerWithIdentifier(StoryboardIdentifiers.diaryComposeViewController) as! DiaryComposeViewController
+        self.presentViewController(composeViewController, animated: true, completion: nil)
     }
     
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {

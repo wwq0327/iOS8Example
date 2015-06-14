@@ -49,6 +49,11 @@ class DiaryYearCollectionViewController: UICollectionViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func newCompose() {
+        let composeViewController = self.storyboard?.instantiateViewControllerWithIdentifier(StoryboardIdentifiers.diaryComposeViewController) as! DiaryComposeViewController
+        self.presentViewController(composeViewController, animated: true, completion: nil)
+    }
 
 
     // MARK: UICollectionViewDataSource
