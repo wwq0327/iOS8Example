@@ -12,7 +12,7 @@ let itemHeight: CGFloat = 150.0 // Cell 的高度
 let itemWidth: CGFloat = 60     // Cell 的宽度
 let collectionViewWidth = itemWidth * 3 // 同时显示三个Cell的时候
 
-let reuseIdentifier = "Cell"
+
 
 class HomeCollectionViewController: UICollectionViewController {
 
@@ -27,6 +27,8 @@ class HomeCollectionViewController: UICollectionViewController {
         self.collectionView?.center = CGPoint(x: view.frame.size.width/2.0, y: view.frame.size.height/2.0)
         
         self.view.backgroundColor = UIColor.whiteColor()
+        
+        self.navigationController?.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,7 +50,7 @@ class HomeCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! HomeYearCollectionViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(CollectionCellIdetifiers.homeYearCellIdentifiers, forIndexPath: indexPath) as! HomeYearCollectionViewCell
         
         cell.textInt = 2015
         cell.labelText = "二零一五年"
@@ -61,5 +63,21 @@ class HomeCollectionViewController: UICollectionViewController {
         return UIEdgeInsetsMake(0, leftRightMagrin, 0, leftRightMagrin);
     }
     
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        // 直接回载storyboard
+        var dvc = self.storyboard?.instantiateViewControllerWithIdentifier(StoryboardIdentifiers.diaryYearIdentifiers) as! DiaryYearCollectionViewController
+        
+        dvc.year = 2015
+        self.navigationController?.pushViewController(dvc, animated: true)
+        
+    }
 
+}
+
+extension HomeCollectionViewController: UINavigationControllerDelegate {
+    func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        var animator = DiaryAnimator()
+        animator.operation = operation
+        return animator
+    }
 }

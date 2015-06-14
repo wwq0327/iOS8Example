@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD8803B81B2D163F00CD53EA /* DiaryYearCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8803B71B2D163F00CD53EA /* DiaryYearCollectionViewController.swift */; };
+		AD8803BA1B2D18F000CD53EA /* DiaryHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8803B91B2D18F000CD53EA /* DiaryHelper.swift */; };
+		AD8803BC1B2D20EE00CD53EA /* DiaryAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8803BB1B2D20EE00CD53EA /* DiaryAnimator.swift */; };
+		AD8803BE1B2D5BA500CD53EA /* DiaryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8803BD1B2D5BA500CD53EA /* DiaryCollectionViewCell.swift */; };
+		AD8803C11B2D5D2100CD53EA /* DiaryMonthDayCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8803C01B2D5D2100CD53EA /* DiaryMonthDayCollectionViewController.swift */; };
 		ADF9CEEC1B2C81FA0090A172 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF9CEEB1B2C81FA0090A172 /* AppDelegate.swift */; };
 		ADF9CEEF1B2C81FA0090A172 /* Diary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ADF9CEED1B2C81FA0090A172 /* Diary.xcdatamodeld */; };
 		ADF9CEF11B2C81FA0090A172 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF9CEF01B2C81FA0090A172 /* ViewController.swift */; };
@@ -33,6 +38,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AD8803B71B2D163F00CD53EA /* DiaryYearCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryYearCollectionViewController.swift; sourceTree = "<group>"; };
+		AD8803B91B2D18F000CD53EA /* DiaryHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryHelper.swift; sourceTree = "<group>"; };
+		AD8803BB1B2D20EE00CD53EA /* DiaryAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryAnimator.swift; sourceTree = "<group>"; };
+		AD8803BD1B2D5BA500CD53EA /* DiaryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryCollectionViewCell.swift; sourceTree = "<group>"; };
+		AD8803C01B2D5D2100CD53EA /* DiaryMonthDayCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryMonthDayCollectionViewController.swift; sourceTree = "<group>"; };
 		ADF9CEE61B2C81FA0090A172 /* Diary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Diary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADF9CEEA1B2C81FA0090A172 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ADF9CEEB1B2C81FA0090A172 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +80,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AD8803BF1B2D5CF400CD53EA /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				ADF9CF0E1B2C82630090A172 /* TpldKhangXiDictTrial.otf */,
+				ADF9CF0F1B2C82630090A172 /* Wyue-GutiFangsong-NC_deliverable.otf */,
+			);
+			name = fonts;
+			sourceTree = "<group>";
+		};
 		ADF9CEDD1B2C81FA0090A172 = {
 			isa = PBXGroup;
 			children = (
@@ -91,15 +110,17 @@
 		ADF9CEE81B2C81FA0090A172 /* Diary */ = {
 			isa = PBXGroup;
 			children = (
-				ADF9CF0E1B2C82630090A172 /* TpldKhangXiDictTrial.otf */,
-				ADF9CF0F1B2C82630090A172 /* Wyue-GutiFangsong-NC_deliverable.otf */,
+				AD8803BF1B2D5CF400CD53EA /* fonts */,
 				ADF9CF1D1B2C8A1E0090A172 /* Label */,
 				ADF9CF1C1B2C89EE0090A172 /* Layout */,
 				ADF9CF1B1B2C89DF0090A172 /* Cell */,
 				ADF9CEF01B2C81FA0090A172 /* ViewController.swift */,
 				ADF9CEF21B2C81FA0090A172 /* Main.storyboard */,
 				ADF9CF131B2C82DB0090A172 /* HomeCollectionViewController.swift */,
+				AD8803B71B2D163F00CD53EA /* DiaryYearCollectionViewController.swift */,
+				AD8803B91B2D18F000CD53EA /* DiaryHelper.swift */,
 				ADF9CEE91B2C81FA0090A172 /* Supporting Files */,
+				AD8803C01B2D5D2100CD53EA /* DiaryMonthDayCollectionViewController.swift */,
 			);
 			path = Diary;
 			sourceTree = "<group>";
@@ -136,6 +157,7 @@
 		ADF9CF1B1B2C89DF0090A172 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				AD8803BD1B2D5BA500CD53EA /* DiaryCollectionViewCell.swift */,
 				ADF9CF151B2C830D0090A172 /* HomeYearCollectionViewCell.swift */,
 			);
 			name = Cell;
@@ -145,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				ADF9CF191B2C85470090A172 /* DiaryLayout.swift */,
+				AD8803BB1B2D20EE00CD53EA /* DiaryAnimator.swift */,
 			);
 			name = Layout;
 			sourceTree = "<group>";
@@ -259,13 +282,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD8803BC1B2D20EE00CD53EA /* DiaryAnimator.swift in Sources */,
 				ADF9CF161B2C830D0090A172 /* HomeYearCollectionViewCell.swift in Sources */,
 				ADF9CF1A1B2C85470090A172 /* DiaryLayout.swift in Sources */,
 				ADF9CEF11B2C81FA0090A172 /* ViewController.swift in Sources */,
 				ADF9CF181B2C832C0090A172 /* DiaryLabel.swift in Sources */,
+				AD8803BE1B2D5BA500CD53EA /* DiaryCollectionViewCell.swift in Sources */,
+				AD8803C11B2D5D2100CD53EA /* DiaryMonthDayCollectionViewController.swift in Sources */,
 				ADF9CF141B2C82DB0090A172 /* HomeCollectionViewController.swift in Sources */,
 				ADF9CEEC1B2C81FA0090A172 /* AppDelegate.swift in Sources */,
 				ADF9CEEF1B2C81FA0090A172 /* Diary.xcdatamodeld in Sources */,
+				AD8803BA1B2D18F000CD53EA /* DiaryHelper.swift in Sources */,
+				AD8803B81B2D163F00CD53EA /* DiaryYearCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,6 +489,7 @@
 				ADF9CF0A1B2C81FB0090A172 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ADF9CF0B1B2C81FB0090A172 /* Build configuration list for PBXNativeTarget "DiaryTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +498,7 @@
 				ADF9CF0D1B2C81FB0090A172 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
