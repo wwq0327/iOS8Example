@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class DiaryMonthDayCollectionViewController: UICollectionViewController {
     
@@ -16,8 +17,14 @@ class DiaryMonthDayCollectionViewController: UICollectionViewController {
     var composeButton: UIButton!
     var monthLabel: DiaryLabel!
     
+    var diarys = [NSManagedObject]()
+    var fetchedResultsController : NSFetchedResultsController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        loadData()
+        
         
         // 年份标签
         yearLabel = DiaryLabel(fontname: "TpldKhangXiDictTrial", labelText: "\(numberToChinese(year))年", fontSize: 20.0, lineHeight: 5.0)
@@ -67,30 +74,75 @@ class DiaryMonthDayCollectionViewController: UICollectionViewController {
         
         self.view.backgroundColor = UIColor.whiteColor()
     }
+
+    
+    func loadData() {
+        let fetchRequest = NSFetchRequest(entityName:"Diary")
+        
+        println("year = \(year) AND month = \(month)")
+        
+        fetchRequest.predicate = NSPredicate(format: "year = \(year) AND month = \(month)")
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "created_at", ascending: true)]
+        
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
+            managedObjectContext: managedContext, sectionNameKeyPath: "year",
+            cacheName: nil)
+        
+        fetchedResultsController.delegate = self
+        //3
+        var error: NSError? = nil
+        if (!fetchedResultsController.performFetch(&error)){
+            println("Error: \(error?.localizedDescription)")
+        }
+        
+        var fetchedResults = fetchedResultsController.fetchedObjects as! [NSManagedObject]
+        diarys = fetchedResults
+        print("This month have \(diarys.count) \n")
+
+    }
+
     
     func newCompose() {
         let composeViewController = self.storyboard?.instantiateViewControllerWithIdentifier(StoryboardIdentifiers.diaryComposeViewController) as! DiaryComposeViewController
         self.presentViewController(composeViewController, animated: true, completion: nil)
     }
     
+}
+
+// collection cell
+extension DiaryMonthDayCollectionViewController: UICollectionViewDelegateFlowLayout, NSFetchedResultsControllerDelegate{
+
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return diarys.count
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(CollectionCellIdetifiers.diaryCellIdentifiers, forIndexPath: indexPath) as! DiaryCollectionViewCell
-        cell.labelText = "一十四日"
-        cell.textInt = 6
+        var diary = fetchedResultsController.objectAtIndexPath(indexPath) as! Diary
+        
+        // Configure the cell
+        if let title = diary.title {
+            cell.labelText = title
+        } else {
+            cell.labelText = "\(numberToChineseWithUnit(NSCalendar.currentCalendar().component(NSCalendarUnit.CalendarUnitDay, fromDate: diary.created_at))) 日"
+        }
         return cell
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
         var leftRightMagrin = (collectionViewWidth - itemWidth)/2
         return UIEdgeInsetsMake(0, leftRightMagrin, 0, leftRightMagrin);
+    }
+    
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        var dvc = self.storyboard?.instantiateViewControllerWithIdentifier(StoryboardIdentifiers.diaryViewController) as! DiaryViewController
+        var diary = fetchedResultsController.objectAtIndexPath(indexPath) as! Diary
+        dvc.diary = diary
+        self.navigationController?.pushViewController(dvc, animated: true)
     }
     
 }

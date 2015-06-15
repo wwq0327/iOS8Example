@@ -41,6 +41,7 @@ class DiaryComposeViewController: UIViewController {
         composeView.editable = true
         composeView.userInteractionEnabled = true
         composeView.textContainerInset = UIEdgeInsetsMake(contentMargin, contentMargin, contentMargin, contentMargin)
+        
         // add locationtextView
         localtionTextView = UITextView(frame: CGRectMake(0, composeView.frame.size.height - 30.0, screenRect.width - 60.0, 30.0))
         localtionTextView.font = DiaryLocationFont
@@ -91,7 +92,7 @@ class DiaryComposeViewController: UIViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateAddress:", name: "DiaryLocationUpdated", object: nil)
     }
     
-    func updatedAddress(notification: NSNotification) {
+    func updateAddress(notification: NSNotification) {
         if let address = notification.object as? String {
             println("Author at \(address)")
             if let lastLocation = diary?.location {
@@ -100,7 +101,9 @@ class DiaryComposeViewController: UIViewController {
                 localtionTextView.text = "于 \(address)"
             }
             
-            UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { self.localtionTextView.alpha = 1.0 }, completion: nil)
+            UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+                self.localtionTextView.alpha = 1.0
+                }, completion: nil)
             localtionHelper.locationManager.stopUpdatingLocation()
         }
     }
