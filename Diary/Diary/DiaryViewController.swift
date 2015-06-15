@@ -91,7 +91,7 @@ class DiaryViewController: UIViewController, UIWebViewDelegate, UIScrollViewDele
         let stampCSS = ".stamp {width:24px; height:auto; position:fixed; bottom:20px;}"
         
         
-        let extraHTML = "<div class='extra'>\(diary.location)<br>\(timeString) </div>"
+        let extraHTML = "<div class='extra'>于 \(diary.location!)<br>\(timeString) </div>"
         let contentHTML = "<div class='container'>\(title)<div class='content'><p>\(newDiaryString)</p></div>"
         
         webView.loadHTMLString("\(headertags)\(bodyCSS) \(allCSS) \(contentCSS) \(titleCSS) \(extraCSS) .container { \(containerCSS) } \(stampCSS) </style></head> <body> \(contentHTML) \(extraHTML)</body></html>", baseURL: nil)

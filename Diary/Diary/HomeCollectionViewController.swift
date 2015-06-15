@@ -9,10 +9,10 @@
 import UIKit
 import CoreData
 
+// 每个列表只显示三个Cell
 let itemHeight: CGFloat = 150.0 // Cell 的高度
 let itemWidth: CGFloat = 60     // Cell 的宽度
 let collectionViewWidth = itemWidth * 3 // 同时显示三个Cell的时候
-
 
 
 class HomeCollectionViewController: UICollectionViewController {
@@ -25,17 +25,19 @@ class HomeCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        var yearLayout = DiaryLayout()
-//        yearLayout.scrollDirection = UICollectionViewScrollDirection.Horizontal
-//        self.collectionView?.setCollectionViewLayout(yearLayout, animated: false)
-//        
-//        self.collectionView?.frame = CGRectMake(0, 0, collectionViewWidth, itemHeight)
-//        self.collectionView?.center = CGPoint(x: view.frame.size.width/2.0, y: view.frame.size.height/2.0)
-//        
-//        self.view.backgroundColor = UIColor.whiteColor()
-//        
-//        self.navigationController?.delegate = self
         loadData()
+        
+        // layout 设置
+        var yearLayout = DiaryLayout()
+        // scroll 滚动条只显示出水平的
+        yearLayout.scrollDirection = UICollectionViewScrollDirection.Horizontal
+        self.collectionView?.setCollectionViewLayout(yearLayout, animated: false)
+        // 设置collection视图的大小
+        self.collectionView?.frame = CGRect(x: 0, y: 0, width: collectionViewWidth, height: itemHeight)
+        self.collectionView?.center = CGPoint(x: self.view.frame.size.width/2.0, y: self.view.frame.size.height/2.0)
+        
+        self.view.backgroundColor = UIColor.whiteColor()
+        self.navigationController?.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -67,14 +69,7 @@ class HomeCollectionViewController: UICollectionViewController {
             }
         }
         
-        var yearLayout = DiaryLayout()
-        yearLayout.scrollDirection = UICollectionViewScrollDirection.Horizontal
-        self.collectionView?.setCollectionViewLayout(yearLayout, animated: false)
-        self.collectionView?.frame = CGRect(x: 0, y: 0, width: collectionViewWidth, height: itemHeight)
-        self.collectionView?.center = CGPoint(x: self.view.frame.size.width/2.0, y: self.view.frame.size.height/2.0)
-        
-        self.view.backgroundColor = UIColor.whiteColor()
-        self.navigationController?.delegate = self
+
     }
 
     // MARK: UICollectionViewDataSource

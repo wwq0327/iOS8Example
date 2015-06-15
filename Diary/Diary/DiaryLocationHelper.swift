@@ -37,13 +37,32 @@ class DiaryLocationHelper: NSObject, CLLocationManagerDelegate {
         }
     }
     
-//    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-//
-//        var locationInfo: CLLocation! = locations.last as! CLLocation
-//        
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+
+        var locationInfo = locations.last as! CLLocation
+        
 //        println(locationInfo)
-//        
-//        geocoder.reverseGeocodeLocation(locationInfo, completionHandler: { (placemarks, error) -> Void in
+        
+        geocoder.reverseGeocodeLocation(locationInfo, completionHandler: { (placemarks, error) -> Void in
+            if (error != nil) {
+                println("reverse geodcode fail: \(error.localizedDescription)")
+            }
+            if let pm = placemarks.first as? CLPlacemark {
+                self.address = pm.name
+                NSNotificationCenter.defaultCenter().postNotificationName("DiaryLocationUpdated", object: self.address)
+            }
+        })
+    }
+    
+    // 失败则停止定位
+    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
+        println(error)
+        locationManager.stopUpdatingLocation()
+    }
+    
+//    func locationManager(manager: CLLocationManager!, didUpdateToLocation newLocation: CLLocation!, fromLocation oldLocation: CLLocation!) {
+//        // 位置更新后通过CLGeocoder获取位置描述， 例如广州市
+//        geocoder.reverseGeocodeLocation(newLocation, completionHandler: { (placemarks, error) -> Void in
 //            if (error != nil) {
 //                println("reverse geodcode fail: \(error.localizedDescription)")
 //            }
@@ -56,26 +75,4 @@ class DiaryLocationHelper: NSObject, CLLocationManagerDelegate {
 //            }
 //        })
 //    }
-//    
-    // 失败则停止定位
-    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
-        println(error)
-        locationManager.stopUpdatingLocation()
-    }
-    
-    func locationManager(manager: CLLocationManager!, didUpdateToLocation newLocation: CLLocation!, fromLocation oldLocation: CLLocation!) {
-        // 位置更新后通过CLGeocoder获取位置描述， 例如广州市
-        geocoder.reverseGeocodeLocation(newLocation, completionHandler: { (placemarks, error) -> Void in
-            if (error != nil) {
-                println("reverse geodcode fail: \(error.localizedDescription)")
-            }
-            if let pm = placemarks as? [CLPlacemark] {
-                if pm.count > 0 {
-                    var placemark = pm.first
-                    self.address = placemark?.locality
-                    NSNotificationCenter.defaultCenter().postNotificationName("DiaryLocationUpdated", object: self.address)
-                }
-            }
-        })
-    }
 }

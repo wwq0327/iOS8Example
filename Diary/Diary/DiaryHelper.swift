@@ -12,11 +12,11 @@ let defaultFont = "Wyue-GutiFangsong-NC"
 
 let screenRect = UIScreen.mainScreen().bounds
 let DiaryRed = UIColor(red: 192.0/255.0, green: 23.0/255.0, blue: 48.0/255.0, alpha: 1.0)
-let DiaryFont = UIFont(name: defaultFont, size: 18) as UIFont!
-let DiaryLocationFont = UIFont(name: defaultFont, size: 16) as UIFont!
-let DiaryTitleFont = UIFont(name: defaultFont, size: 18) as UIFont!
+let DiaryFont = UIFont(name: defaultFont, size: 18.0) as UIFont!
+let DiaryLocationFont = UIFont(name: defaultFont, size: 16.0) as UIFont!
+let DiaryTitleFont = UIFont(name: defaultFont, size: 18.0) as UIFont!
 
-// CoreData
+// CoreData 数据库配置
 let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
 let managedContext = appDelegate.managedObjectContext!
 
@@ -54,6 +54,7 @@ func diaryButtonWith(#text: String, #fontSize: CGFloat, #width: CGFloat, #normal
     return button
 }
 
+// 将数字日期转换为中文的汉字日期
 func numberToChinese(number: Int) -> String {
     var numbers = Array(String(number))
     var finalString = ""
@@ -65,6 +66,7 @@ func numberToChinese(number: Int) -> String {
     return finalString
 }
 
+// 带单位的中文数字
 func numberToChineseWithUnit(number: Int) -> String {
     var numbers = Array(String(number))
     var units = unitParser(numbers.count)
